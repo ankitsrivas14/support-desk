@@ -1,6 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+const noteRouter = require('./noteRoutes')
+
+//Re-route into Note router
+router.use('/:ticketId/notes', noteRouter)
+
 const { 
     getTickets, 
     createTicket, 
